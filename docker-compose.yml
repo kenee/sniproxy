@@ -1,0 +1,9 @@
+version: '2'
+services:
+  sniproxy:
+    image: docker.wdwd.com/ops/sniproxy:latest
+    build: .
+    hostname: sniproxy
+    ports:
+      - "1996:1996" 
+      - "1998:1998"
