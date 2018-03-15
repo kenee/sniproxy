@@ -4,6 +4,9 @@ services:
     image: docker.wdwd.com/ops/sniproxy:latest
     build: .
     hostname: sniproxy
+    volumes:
+      - "./sniproxy.conf:/etc/sniproxy.conf"
     ports:
-      - "1996:1996" 
-      - "1998:1998"
+      - "443:443" 
+    tty: true
+    #command: /usr/sbin/sniproxy -c /etc/sniproxy.conf -f -n 65532
