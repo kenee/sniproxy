@@ -1,12 +1,11 @@
 version: '2'
 services:
   sniproxy:
-    image: docker.wdwd.com/ops/sniproxy:latest
+    image: mibatt/sniproxy:latest
     build: .
     hostname: sniproxy
     volumes:
       - "./sniproxy.conf:/etc/sniproxy.conf"
     ports:
       - "443:443" 
-    tty: true
-    #command: /usr/sbin/sniproxy -c /etc/sniproxy.conf -f -n 65532
+    command: /usr/sbin/sniproxy -c /etc/sniproxy.conf -f -n 65532
